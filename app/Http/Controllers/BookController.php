@@ -57,10 +57,9 @@ class BookController extends Controller
 
         $new_book->created_by = \Auth::user()->id;
 
+        $new_book->save();
 
         $new_book->categories()->attach($request->get('categories'));
-
-        $new_book->save();
 
         if($request->get('save_action') == 'PUBLISH'){
           return redirect()

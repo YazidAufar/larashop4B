@@ -20,6 +20,7 @@ Route::get('/categories/trash', [CategoryController::class, 'trash'])->name('cat
 Route::get('/categories/{id}/restore', [CategoryController::class, 'restore'])->name('categories.restore');
 Route::delete('/categories/{category}/delete-permanent', [CategoryController::class, 'deletePermanent'])->name('categories.delete-permanent');
 Route::resource('categories', CategoryController::class);
-Route::resource('books', BookController::class);
 Route::get('/ajax/categories/search', [CategoryController::class, 'ajaxSearch']);
+Route::resource('books', BookController::class);
+
 
